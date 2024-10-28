@@ -25,14 +25,47 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  flex-direction: column; /* Permite que o conteúdo se empilhe verticalmente */
+  align-items: center; /* Centraliza o conteúdo horizontalmente */
+  justify-content: center; /* Centraliza o conteúdo verticalmente */
   min-width: 320px;
   min-height: 100vh;
+  padding: 1rem; /* Adiciona um pouco de espaçamento nas laterais */
+  background-color: #000000; /* Mantém o fundo escuro */
+}
+
+/* Estilo do Cabeçalho Principal */
+.main-header {
+  background: #3a8eeb; /* Cor de fundo do cabeçalho */
+  padding: 1rem 2rem; /* Espaçamento interno */
+  display: flex; /* Usando flexbox para alinhar os itens */
+  justify-content: space-between; /* Espaço entre os itens */
+  align-items: center; /* Alinha verticalmente ao centro */
+}
+
+/* Estilo dos Links do Cabeçalho */
+.header-link {
+  color: #ffffff; /* Cor do texto */
+  text-decoration: none; /* Remove o sublinhado */
+  font-size: 1.2em; /* Tamanho da fonte */
+  transition: color 0.3s; /* Transição suave para a cor */
+}
+
+.header-link:hover {
+  color: #f0f0f0; /* Cor ao passar o mouse */
+}
+
+/* Estilo específico para o link de Login */
+.header-link.login {
+  margin-left: auto; /* Empurra o link de Login para a direita */
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  text-align: center; /* Centraliza o título */
+  margin-bottom: 1rem; /* Espaçamento abaixo do título */
+  color: inherit; /* Usa a cor definida no :root */
 }
 
 button {
@@ -43,26 +76,42 @@ button {
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
+  color: #ffffff; /* Define a cor do texto do botão */
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: border-color 0.25s, background-color 0.25s; /* Adiciona transição ao fundo */
+  margin-top: 1rem; /* Espaçamento acima do botão */
+  width: auto; /* Largura automática para botões */
 }
+
 button:hover {
   border-color: #646cff;
+  background-color: #2a2a2a; /* Muda a cor de fundo ao passar o mouse */
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5em; /* Reduz o tamanho da fonte em telas menores */
   }
-  a:hover {
-    color: #747bff;
-  }
+
   button {
-    background-color: #f9f9f9;
+    width: 100%; /* Botões ocupam toda a largura em telas pequenas */
+    padding: 0.6em; /* Ajusta o padding para telas pequenas */
+  }
+}
+
+/* Adicione as regras de responsividade para o cabeçalho, se necessário */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column; /* Muda a direção para coluna em telas menores */
+    align-items: flex-start; /* Alinha os itens à esquerda */
+  }
+
+  .header-link {
+    margin-bottom: 0.5rem; /* Espaçamento entre os links em telas menores */
   }
 }

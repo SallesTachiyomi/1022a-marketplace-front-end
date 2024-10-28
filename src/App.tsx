@@ -34,7 +34,7 @@ function App() {
   // useEffect para realizar operações após a montagem do componente
   useEffect(() => {
     // Configura o nome inicial
-    setNome("Pkz1nz")
+    setNome("Marketplace")
 
     // Busca os dados de produtos do backend
     fetch("https://one022a-marketplace-xpww.onrender.com/produtos")
