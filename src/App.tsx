@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     setNome("Sales")
     //Buscar os dados do BackENd
-    fetch("https://one022a-marketplace-xpww.onrender.com")
+    fetch("https://one022a-marketplace-xpww.onrender.com/produtos")
       .then(resposta => resposta.json())
       .then(dados => setProdutos(dados))
     //Colocar em uma variável
