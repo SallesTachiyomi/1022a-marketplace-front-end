@@ -37,12 +37,12 @@ function App() {
     setNome("Pkz1nz")
 
     // Busca os dados de produtos do backend
-    fetch("https://one022a-marketplace-1-nnwc.onrender.com/produtos")
+    fetch("https://one022a-marketplace-xpww.onrender.com/produtos")
       .then(resposta => resposta.json())
       .then(dados => setProdutos(dados))
 
     // Busca os dados de usuários do backend
-    fetch("https://one022a-marketplace-1-nnwc.onrender.com/usuarios")
+    fetch("https://one022a-marketplace-xpww.onrender.com/usuarios")
       .then(resposta => resposta.json())
       .then(dados => setUsuarios(dados))
   }, [])
