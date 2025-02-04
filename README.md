@@ -27,6 +27,7 @@ Este projeto é um sistema simples para **cadastro, listagem, alteração e excl
 ### **1️⃣ Clonar o Repositório**
 ```bash
 git clone https://github.com/SallesTachiyomi/1022a-marketplace-front-end
+git clone https://github.com/SallesTachiyomi/1022a-marketplace
 ```
 
 ### **2️⃣ Instalar as Dependências**
@@ -41,6 +42,11 @@ npm run dev
 
 O projeto estará disponível em `http://localhost:5173` (padrão do Vite).
 
+🌍 Acesse o Projeto no Vercel
+O projeto também está disponível no Vercel no seguinte link:
+
+🔗 1022a-marketplace-front-end-alpha.vercel.app
+
 ---
 
 ## 🌍 API Utilizada
@@ -48,7 +54,7 @@ O projeto estará disponível em `http://localhost:5173` (padrão do Vite).
 O backend da aplicação está hospedado no **Render** e pode ser acessado através da seguinte URL:
 
 ```
-https://one022a-marketplace-e90o.onrender.com/produtos
+https://one022a-marketplace-xpww.onrender.com/produtos
 ```
 
 
@@ -91,5 +97,7 @@ https://one022a-marketplace-e90o.onrender.com/produtos
 Este projeto é de código aberto e pode ser utilizado livremente.
 
 ---
+
+
 
 💡 **Desenvolvido por [Erick Tarasiuk Alexandre, Gabriel Sales Machado de Souza]**
