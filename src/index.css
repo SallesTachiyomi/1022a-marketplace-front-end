@@ -50,7 +50,7 @@ button {
 }
 
 button:hover {
-  background-color: #ff4f4f;
+  background-color: #0d74b8;
   border-color: #646cff;
 }
 
@@ -68,11 +68,11 @@ button.alterar:hover {
 }
 
 button.excluir {
-  background-color: #f44336;
+  background-color: #070606;
 }
 
 button.excluir:hover {
-  background-color: #e53935;
+  background-color: #f8f8f8;
 }
 
 @media (prefers-color-scheme: light) {
