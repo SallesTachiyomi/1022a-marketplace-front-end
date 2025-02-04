@@ -1,3 +1,4 @@
+/* Resetando margens e padding no #root */
 #root {
   margin: 0;
   padding: 0;
@@ -50,7 +51,7 @@
 
 .header-actions .login-button {
   padding: 0.8rem 1.5rem;
-  background-color: #3498db;
+  background-color: #56CCF2; /* Azul Claro */
   color: #fff;
   font-weight: bold;
   border: none;
@@ -60,8 +61,9 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Hover para o botão de login */
 .header-actions .login-button:hover {
-  background-color: #2980b9;
+  background-color: #4fa3d1; /* Cor mais escura do azul claro */
   transform: translateY(-2px);
 }
 
@@ -168,11 +170,12 @@
   margin-bottom: 1rem;
 }
 
+/* Botão Comprar */
 .botao-comprar {
   margin-top: auto;
   width: 100%;
   padding: 0.8rem;
-  background-color: #3498db;
+  background-color: #56CCF2; /* Azul Claro */
   color: #fff;
   font-weight: bold;
   border: none;
@@ -182,8 +185,9 @@
   text-align: center;
 }
 
+/* Hover do botão Comprar */
 .botao-comprar:hover {
-  background-color: #2206c4;
+  background-color: #4fa3d1; /* Cor mais escura do azul claro */
   transform: translateY(-2px);
 }
 
@@ -243,6 +247,39 @@
 @media (max-width: 768px) {
   .produto-item,
   .usuario-item {
+    width: 100%;
+  }
+}
+
+/* Ajustando botões em todas as seções */
+button, .login-button, .botao-comprar {
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  text-align: center;
+}
+
+/* Hover para todos os botões */
+button:hover, .login-button:hover, .botao-comprar:hover {
+  transform: translateY(-2px);
+}
+
+/* Cor Azul Claro para todos os botões */
+button, .login-button, .botao-comprar {
+  background-color: #56CCF2; /* Azul Claro */
+  color: white;
+}
+
+button:hover, .login-button:hover, .botao-comprar:hover {
+  background-color: #4fa3d1; /* Azul Claro escuro */
+}
+
+/* Responsividade dos botões */
+@media (max-width: 768px) {
+  button, .login-button, .botao-comprar {
     width: 100%;
   }
 }
