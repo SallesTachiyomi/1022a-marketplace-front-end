@@ -2,7 +2,9 @@ import { useParams } from "react-router-dom";
 import { ChangeEvent, FormEvent, useState , useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 function AlterarProduto(){
+    //Obtém o id do produto da URL.
     const { id } = useParams()
+    //requisição GET para buscar os dados do produto com o id especificado e os armazena
     useEffect(()=>{
         fetch(`https://one022a-marketplace-xpww.onrender.com/produtos/${id}`)
         .then(resposta=>resposta.json())
@@ -18,6 +20,7 @@ function AlterarProduto(){
     const [descricao,setDescricao] = useState("")
     const [preco,setPreco] = useState("")
     const [imagem,setImagem] = useState("")
+    //faz uma requisição PUT para atualizar o produto na API com os novos dados.
     async function handleForm(event:FormEvent){
         event.preventDefault()
         try{

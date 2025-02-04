@@ -20,7 +20,7 @@ function App() {
       .then(resposta => resposta.json())
       .then(dados => setProdutos(dados))
   }, [])
-
+  //faz uma requisição DELETE para remover o produto da API
   function handleExcluir(id:number){
     alert(`Excluir o produto com id ${id}`)
     fetch(`https://one022a-marketplace-xpww.onrender.com/produtos/${id}`, {
