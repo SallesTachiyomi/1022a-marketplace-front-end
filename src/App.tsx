@@ -49,7 +49,7 @@ function App() {
                 <div className='container-imagem'>
                   <img src={produto.imagem} alt="Imagem do produto" />
                 </div>
-                <p className="produto-preco">{produto.preco}</p>
+                <p className="produto-preco">R$ {produto.preco}</p>
                 <p className="produto-descricao">{produto.descricao}</p>
                 <button className="botao-comprar">Comprar</button>
                 <button onClick={() => handleExcluir(produto.id)}>Excluir</button>
