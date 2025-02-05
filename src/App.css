@@ -1,20 +1,18 @@
-/* Resetando margens e padding no #root */
 #root {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9f9f9;
+  background-color: #1e1e2f;
 }
 
-/* Header */
 .site-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
-  background-color: #2c3e50;
-  color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #2c2c3f;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 100%;
   margin-bottom: 2rem;
   box-sizing: border-box;
@@ -27,7 +25,7 @@
 
 .logo img:hover {
   transform: scale(1.1);
-  filter: drop-shadow(0 0 2em #3498db);
+  filter: drop-shadow(0 0 2em #ff3d00);
 }
 
 .navigation ul {
@@ -39,35 +37,33 @@
 }
 
 .navigation a {
-  color: #fff;
+  color: #ff3d00;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.2s ease;
 }
 
 .navigation a:hover {
-  color: #3498db;
+  color: #ff6f00;
 }
 
 .header-actions .login-button {
   padding: 0.8rem 1.5rem;
-  background-color: #56CCF2; /* Azul Claro */
-  color: #fff;
+  background-color: #ff3d00;
+  color: #ffffff;
   font-weight: bold;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.2s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Hover para o botão de login */
 .header-actions .login-button:hover {
-  background-color: #4fa3d1; /* Cor mais escura do azul claro */
+  background-color: #ff6f00;
   transform: translateY(-2px);
 }
 
-/* Responsividade do Header */
 @media (max-width: 768px) {
   .site-header {
     flex-direction: column;
@@ -91,7 +87,6 @@
   }
 }
 
-/* Produtos */
 .produtos-container {
   display: flex;
   flex-direction: column;
@@ -103,7 +98,7 @@
 
 .titulo-produto {
   font-size: 3rem;
-  color: #2c3e50;
+  color: #ff3d00;
   margin-bottom: 1rem;
   text-align: center;
   font-weight: 700;
@@ -119,20 +114,27 @@
 .produto-item {
   width: 250px;
   padding: 1rem;
-  border: 1px solid #ddd;
+  border: 1px solid #444;
   border-radius: 8px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #2c2c3f;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: left;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .produto-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.container-imagem {
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .container-imagem img {
@@ -153,7 +155,7 @@
 .produto-nome {
   font-size: 1.2rem;
   margin: 0.5rem 0;
-  color: #2c3e50;
+  color: #ff3d00;
   font-weight: 600;
 }
 
@@ -166,17 +168,16 @@
 
 .produto-descricao {
   font-size: 0.9rem;
-  color: #666;
+  color: #ccc;
   margin-bottom: 1rem;
 }
 
-/* Botão Comprar */
 .botao-comprar {
-  margin-top: auto;
+  margin-bottom: 0.5rem;
   width: 100%;
   padding: 0.8rem;
-  background-color: #56CCF2; /* Azul Claro */
-  color: #fff;
+  background-color: #28a745;
+  color: #ffffff;
   font-weight: bold;
   border: none;
   border-radius: 4px;
@@ -185,13 +186,36 @@
   text-align: center;
 }
 
-/* Hover do botão Comprar */
 .botao-comprar:hover {
-  background-color: #4fa3d1; /* Cor mais escura do azul claro */
-  transform: translateY(-2px);
+  background-color: #218838;
 }
 
-/* Usuários */
+.botao-excluir {
+  margin-bottom: 0.5rem;
+}
+
+.botao-excluir:hover {
+  background-color: #c82333;
+}
+
+.botao-alterar {
+  margin-top: auto;
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #007bff;
+  color: #ffffff;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  text-align: center;
+}
+
+.botao-alterar:hover {
+  background-color: #0069d9;
+}
+
 .usuarios-container {
   padding: 1rem;
   text-align: center;
@@ -201,7 +225,7 @@
 
 .titulo-usuario {
   font-size: 3rem;
-  color: #2c3e50;
+  color: #ff3d00;
   margin-bottom: 2rem;
   font-weight: 700;
 }
@@ -216,27 +240,26 @@
 .usuario-item {
   width: calc(33.33% - 1rem);
   padding: 1rem;
-  border: 1px solid #ddd;
+  border: 1px solid #444;
   border-radius: 8px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #2c2c3f;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: left;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .usuario-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
 
 .usuario-nome {
   font-size: 1.2rem;
   margin: 0.5rem 0;
-  color: #2c3e50;
+  color: #ff3d00;
   font-weight: 600;
 }
 
-/* Responsividade Geral */
 @media (max-width: 1024px) {
   .produto-item,
   .usuario-item {
@@ -251,8 +274,7 @@
   }
 }
 
-/* Ajustando botões em todas as seções */
-button, .login-button, .botao-comprar {
+button, .login-button, .botao-comprar, .botao-excluir, .botao-alterar {
   padding: 0.8rem 1.5rem;
   font-weight: bold;
   border: none;
@@ -262,24 +284,12 @@ button, .login-button, .botao-comprar {
   text-align: center;
 }
 
-/* Hover para todos os botões */
-button:hover, .login-button:hover, .botao-comprar:hover {
+button:hover, .login-button:hover, .botao-comprar:hover, .botao-excluir:hover, .botao-alterar:hover {
   transform: translateY(-2px);
 }
 
-/* Cor Azul Claro para todos os botões */
-button, .login-button, .botao-comprar {
-  background-color: #56CCF2; /* Azul Claro */
-  color: white;
-}
-
-button:hover, .login-button:hover, .botao-comprar:hover {
-  background-color: #4fa3d1; /* Azul Claro escuro */
-}
-
-/* Responsividade dos botões */
 @media (max-width: 768px) {
-  button, .login-button, .botao-comprar {
+  button, .login-button, .botao-comprar, .botao-excluir, .botao-alterar {
     width: 100%;
   }
 }
