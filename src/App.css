@@ -207,6 +207,7 @@ a {
   text-align: center;
   text-decoration: none;
   transition: background-color 0.2s ease, transform 0.3s ease;
+  text-transform: uppercase;
 }
 
 button:hover,
