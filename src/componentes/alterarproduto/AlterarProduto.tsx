@@ -1,31 +1,27 @@
 import { useParams } from "react-router-dom";
 import { ChangeEvent, FormEvent, useState , useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-
 function AlterarProduto(){
-    const { id } = useParams();
-    
+    const { id } = useParams()
     useEffect(()=>{
-        fetch(`https://one022a-marketplace-xpww.onrender.com/produtos/${id}`)
+        fetch(`https://one022a-marketplace-e90o.onrender.com/produtos/${id}`)
         .then(resposta=>resposta.json())
         .then(dados=>{
-            setNome(dados.nome);
-            setDescricao(dados.descricao);
-            setPreco(dados.preco);
-            setImagem(dados.imagem);
-        });
-    },[]);
-
-    const navigate = useNavigate();
-    const [nome,setNome] = useState("");
-    const [descricao,setDescricao] = useState("");
-    const [preco,setPreco] = useState("");
-    const [imagem,setImagem] = useState("");
-
+            setNome(dados.nome)
+            setDescricao(dados.descricao)
+            setPreco(dados.preco)
+            setImagem(dados.imagem)
+        })
+    },[])
+    const navigate = useNavigate()
+    const [nome,setNome] = useState("")
+    const [descricao,setDescricao] = useState("")
+    const [preco,setPreco] = useState("")
+    const [imagem,setImagem] = useState("")
     async function handleForm(event:FormEvent){
-        event.preventDefault();
+        event.preventDefault()
         try{
-            const resposta = await fetch(`https://one022a-marketplace-xpww.onrender.com/produtos/${id}`,{
+            const resposta = await fetch(`https://one022a-marketplace-e90o.onrender.com/produtos/${id}`,{
                 method:"PUT",
                 headers:{
                     "Content-Type":"application/json"
@@ -36,34 +32,33 @@ function AlterarProduto(){
                     preco:preco,
                     imagem:imagem
                 })
-            });
+            })
             if(resposta.status!=500){
-                alert("Produto Alterado com Sucesso");
-                navigate("/");
+                alert("Produto Alterado com Sucesso")
+                navigate("/")
             }
             else{
-                const mensagem = await resposta.text();
-                alert("Erro ao Alterar Produto - Error: "+mensagem);
+                const mensagem = await resposta.text()
+                alert("Erro ao Alterar Produto - Error: "+mensagem)
             }
         }
         catch(e){
-            alert("Servidor não está respondendo.");
+            alert("Servidor não está respondendo.")
         }
+        
     }
-
     function handleNome(event:ChangeEvent<HTMLInputElement>){
-        setNome(event.target.value);
+        setNome(event.target.value)
     }
     function handleDescricao(event:ChangeEvent<HTMLInputElement>){
-        setDescricao(event.target.value);
+        setDescricao(event.target.value)
     }
     function handlePreco(event:ChangeEvent<HTMLInputElement>){
-        setPreco(event.target.value);
+        setPreco(event.target.value)
     }
     function handleImagem(event:ChangeEvent<HTMLInputElement>){
-        setImagem(event.target.value);
+        setImagem(event.target.value)
     }
-
     return(
         <>
             <h1>Alterar</h1>
@@ -89,12 +84,12 @@ function AlterarProduto(){
                     <input placeholder="URL Imagem" type="text" name="imagem" id="imagem" value={imagem} onChange={handleImagem} />
                     {imagem && <img className="imagem-produto-reduzida" src={imagem} alt="Imagem do Produto" />}
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <div>
                     <input type="submit" value="Alterar" />
                 </div>
             </form>
         </>
-    );
+    )
 }
 
 export default AlterarProduto;

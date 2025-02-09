@@ -1,5 +1,4 @@
 import {  ChangeEvent, FormEvent, useState } from "react"
-import './CadastroProduto.css'
 import { useNavigate } from 'react-router-dom';
 function CadastroProduto(){
     const navigate = useNavigate()
@@ -11,7 +10,7 @@ function CadastroProduto(){
     async function handleForm(event:FormEvent){
         event.preventDefault()
         try{
-            const resposta = await fetch("https://one022a-marketplace-xpww.onrender.com/produtos",{
+            const resposta = await fetch("https://one022a-marketplace-e90o.onrender.com/produtos",{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json"

@@ -16,14 +16,14 @@ function App() {
   // useEffect para carregar produtos e usuários
   useEffect(() => {
     // Buscar os produtos
-    fetch("https://one022a-marketplace-xpww.onrender.com/produtos")
+    fetch("https://one022a-marketplace-e90o.onrender.com/produtos")
       .then(resposta => resposta.json())
       .then(dados => setProdutos(dados))
   }, [])
-  //faz uma requisição DELETE para remover o produto da API
+
   function handleExcluir(id:number){
     alert(`Excluir o produto com id ${id}`)
-    fetch(`https://one022a-marketplace-xpww.onrender.com/produtos/${id}`, {
+    fetch(`https://one022a-marketplace-e90o.onrender.com/produtos/${id}`, {
       method: 'DELETE'
     })
     .then(resposta=>{
@@ -40,6 +40,7 @@ function App() {
     <>
       {/* Listagem de Produtos */}
       <div className="produtos-container">
+      <Link to="/cadastro-produto">Cadastro de Produto</Link>
         <h1 className='titulo-produto'>Produtos</h1>
         <div className="produtos-list">
           {
@@ -49,11 +50,11 @@ function App() {
                 <div className='container-imagem'>
                   <img src={produto.imagem} alt="Imagem do produto" />
                 </div>
-                <p className="produto-preco">R$ {produto.preco}</p>
+                <p className="produto-preco">{produto.preco}</p>
                 <p className="produto-descricao">{produto.descricao}</p>
                 <button className="botao-comprar">Comprar</button>
-                <button className="botao-excluir" onClick={() => handleExcluir(produto.id)}>Excluir</button>
-                <Link to={`/alterar-produto/${produto.id}`} ><button className="botao-alterar">Alterar</button></Link>
+                <button onClick={() => handleExcluir(produto.id)}>Excluir</button>
+                <Link to={`/alterar-produto/${produto.id}`} className="botao-comprar">Alterar</Link>
               </div>
             ))
           }

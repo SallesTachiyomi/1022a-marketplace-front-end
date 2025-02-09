@@ -1,103 +1,50 @@
-# 📚 Sistema de Gerenciamento de Livros
+# React + TypeScript + Vite
 
-Este projeto é um sistema simples para **cadastro, listagem, alteração e exclusão de livros**, desenvolvido com **React + TypeScript** e um backend hospedado no Render.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
----
+Currently, two official plugins are available:
 
-## 🚀 Funcionalidades
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-- 📌 **Listar Livros**: Exibe uma lista de livros disponíveis.
-- ➕ **Cadastrar Livro**: Permite adicionar novos livros ao sistema.
-- ✏️ **Alterar Livro**: Atualiza as informações de um livro existente.
-- ❌ **Excluir Livro**: Remove um livro do sistema.
+## Expanding the ESLint configuration
 
----
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-## 🛠️ Tecnologias Utilizadas
+- Configure the top-level `parserOptions` property like this:
 
-- **Frontend**: React + TypeScript
-- **Estilização**: CSS
-- **Gerenciamento de Rotas**: React Router
-- **Backend**: API hospedada no Render
-
----
-
-## 🔧 Como Rodar o Projeto Localmente
-
-### **1️⃣ Clonar o Repositório**
-```bash
-git clone https://github.com/SallesTachiyomi/1022a-marketplace-front-end
-git clone https://github.com/SallesTachiyomi/1022a-marketplace
+```js
+export default tseslint.config({
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
 ```
 
-### **2️⃣ Instalar as Dependências**
-```bash
-npm install
+- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
+- Optionally add `...tseslint.configs.stylisticTypeChecked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+
+```js
+// eslint.config.js
+import react from 'eslint-plugin-react'
+
+export default tseslint.config({
+  // Set the react version
+  settings: { react: { version: '18.3' } },
+  plugins: {
+    // Add the react plugin
+    react,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended rules
+    ...react.configs.recommended.rules,
+    ...react.configs['jsx-runtime'].rules,
+  },
+})
 ```
-
-### **3️⃣ Rodar o Projeto**
-```bash
-npm run dev
-```
-
-O projeto estará disponível em `http://localhost:5173` (padrão do Vite).
-
-🌍 Acesse o Projeto no Vercel
-O projeto também está disponível no Vercel no seguinte link:
-
-🔗 1022a-marketplace-front-end-alpha.vercel.app
-
----
-
-## 🌍 API Utilizada
-
-O backend da aplicação está hospedado no **Render** e pode ser acessado através da seguinte URL:
-
-```
-https://one022a-marketplace-xpww.onrender.com/produtos
-```
-
-
-
-### **📝 Endpoints Principais**
-
-| Método  | Rota                          | Descrição                     |
-|---------|-------------------------------|--------------------------------|
-| GET     | `/produtos`                    | Retorna todos os livros        |
-| POST    | `/produtos`                    | Cadastra um novo livro         |
-| PUT     | `/produtos/:id`                | Atualiza um livro pelo ID      |
-| DELETE  | `/produtos/:id`                | Remove um livro pelo ID        |
-
----
-
-## 📌 Estrutura do Projeto
-
-```
-/src
- ├── /assets
- │    ├── react.svg
- ├── /componentes
- │    ├── /alterarproduto
- │    │    ├── AlterarProduto.tsx
- │    │    ├── AlterarProduto.css
- │    ├── /cadastroproduto
- │    │    ├── CadastroProduto.tsx
- │    │    ├── CadastroProduto.css
- ├── /header
- ├── App.tsx
- ├── App.css
- ├── index.css
- ├── main.tsx
-```
-
----
-
-## 📜 Licença
-
-Este projeto é de código aberto e pode ser utilizado livremente.
-
----
-
-
-
-💡 **Desenvolvido por [Erick Tarasiuk Alexandre, Gabriel Sales Machado de Souza]**
