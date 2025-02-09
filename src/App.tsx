@@ -53,7 +53,7 @@ function App() {
                 <div className='container-imagem'>
                   <img src={produto.imagem} alt="Imagem do produto" />
                 </div>
-                <p className="produto-preco">{produto.preco}</p>
+                <p className="produto-preco">R$ {produto.preco}</p>
                 <p className="produto-descricao">{produto.descricao}</p>
                 {/* Exibindo os novos campos */}
                 <p className="produto-categoria">Categoria: {produto.categoria}</p> {/* Categoria do produto */}
