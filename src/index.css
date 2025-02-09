@@ -15,7 +15,7 @@
 
 a {
   font-weight: 500;
-  color: #ff3d00; /* Opera GX accent color */
+  color: #ffffff; /* Opera GX accent color */
   text-decoration: inherit;
 }
 a:hover {
@@ -32,7 +32,7 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-  color: #ff3d00; /* Opera GX accent color */
+  color: #f3bdad; /* Opera GX accent color */
 }
 
 button {
@@ -42,7 +42,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: rgb(163, 11, 11);
+  background-color: #ff3d00;
   color: white;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -51,7 +51,7 @@ button {
 }
 
 button:hover {
-  background-color: #0d74b8;
+  background-color: #fa9049;
   border-color: #646cff;
 }
 
@@ -93,7 +93,7 @@ button.excluir:hover {
     background-color: #4caf50;
   }
   button.excluir {
-    background-color: #f44336;
+    background-color: #ffffff;
   }
 }
 
