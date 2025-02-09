@@ -66,7 +66,7 @@
 }
 
 .navigation a:hover {
-  color: #ff6600;
+  color: #ffffff;
   transform: translateY(-3px); /* Efeito de elevação ao passar o mouse */
 }
 
