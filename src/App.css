@@ -250,7 +250,20 @@
   }
 }
 
+.produto-categoria,
+.produto-faixa-etaria {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  color: #555;
+}
 
+.produto-categoria {
+  font-weight: bold;
+}
+
+.produto-faixa-etaria {
+  font-style: italic;
+}
 
 .produtos-container{
   display: flex;

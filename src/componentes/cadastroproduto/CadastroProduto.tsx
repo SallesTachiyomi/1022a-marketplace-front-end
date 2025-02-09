@@ -1,60 +1,73 @@
-import {  ChangeEvent, FormEvent, useState } from "react"
+import { ChangeEvent, FormEvent, useState } from "react";
 import { useNavigate } from 'react-router-dom';
-function CadastroProduto(){
-    const navigate = useNavigate()
-    const [id,setId] = useState("")
-    const [nome,setNome] = useState("")
-    const [descricao,setDescricao] = useState("")
-    const [preco,setPreco] = useState("")
-    const [imagem,setImagem] = useState("")
-    async function handleForm(event:FormEvent){
-        event.preventDefault()
-        try{
-            const resposta = await fetch("https://one022a-marketplace-e90o.onrender.com/produtos",{
-                method:"POST",
-                headers:{
-                    "Content-Type":"application/json"
+
+function CadastroProduto() {
+    const navigate = useNavigate();
+    const [id, setId] = useState("");
+    const [nome, setNome] = useState("");
+    const [descricao, setDescricao] = useState("");
+    const [preco, setPreco] = useState("");
+    const [imagem, setImagem] = useState("");
+    const [categoria, setCategoria] = useState("");  // Novo estado
+    const [faixaEtaria, setFaixaEtaria] = useState("");  // Novo estado
+
+    async function handleForm(event: FormEvent) {
+        event.preventDefault();
+        try {
+            const resposta = await fetch("https://one022a-marketplace-xpww.onrender.com/produtos", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
                 },
-                body:JSON.stringify({
-                    id:id,
-                    nome:nome,
-                    descricao:descricao,
-                    preco:preco,
-                    imagem:imagem
+                body: JSON.stringify({
+                    id: id,
+                    nome: nome,
+                    descricao: descricao,
+                    preco: preco,
+                    imagem: imagem,
+                    categoria: categoria,  // Incluir categoria no corpo da requisição
+                    faixa_etaria: faixaEtaria  // Incluir faixa_etaria no corpo da requisição
                 })
-            })
-            if(resposta.status!=500){
-                alert("Produto Cadastro com Sucesso")
-                navigate("/")
+            });
+
+            if (resposta.status !== 500) {
+                alert("Produto Cadastrado com Sucesso");
+                navigate("/");
+            } else {
+                const mensagem = await resposta.text();
+                alert("Erro ao Cadastrar Produto - Error: " + mensagem);
             }
-            else{
-                const mensagem = await resposta.text()
-                alert("Erro ao Cadastrar Produto - Error: "+mensagem)
-            }
+        } catch (e) {
+            alert("Servidor não está respondendo.");
         }
-        catch(e){
-            alert("Servidor não está respondendo.")
-        }
-        
     }
-    function handleId(event:ChangeEvent<HTMLInputElement>){
-        setId(event.target.value)
+
+    // Handlers de mudança para os campos
+    function handleId(event: ChangeEvent<HTMLInputElement>) {
+        setId(event.target.value);
     }
-    function handleNome(event:ChangeEvent<HTMLInputElement>){
-        setNome(event.target.value)
+    function handleNome(event: ChangeEvent<HTMLInputElement>) {
+        setNome(event.target.value);
     }
-    function handleDescricao(event:ChangeEvent<HTMLInputElement>){
-        setDescricao(event.target.value)
+    function handleDescricao(event: ChangeEvent<HTMLInputElement>) {
+        setDescricao(event.target.value);
     }
-    function handlePreco(event:ChangeEvent<HTMLInputElement>){
-        setPreco(event.target.value)
+    function handlePreco(event: ChangeEvent<HTMLInputElement>) {
+        setPreco(event.target.value);
     }
-    function handleImagem(event:ChangeEvent<HTMLInputElement>){
-        setImagem(event.target.value)
+    function handleImagem(event: ChangeEvent<HTMLInputElement>) {
+        setImagem(event.target.value);
     }
-    return(
+    function handleCategoria(event: ChangeEvent<HTMLInputElement>) {
+        setCategoria(event.target.value);
+    }
+    function handleFaixaEtaria(event: ChangeEvent<HTMLInputElement>) {
+        setFaixaEtaria(event.target.value);
+    }
+
+    return (
         <>
-            <h1>Meu Componente de Cadastro de Produtos</h1>
+            <h1>Cadastro de Produto</h1>
             <form onSubmit={handleForm}>
                 <div>
                     <input placeholder="Id" type="text" name="id" id="id" onChange={handleId} />
@@ -71,10 +84,16 @@ function CadastroProduto(){
                 <div>
                     <input placeholder="URL Imagem" type="text" name="imagem" id="imagem" onChange={handleImagem} />
                 </div>
+                <div>
+                    <input placeholder="Categoria" type="text" name="categoria" id="categoria" onChange={handleCategoria} />
+                </div>
+                <div>
+                    <input placeholder="Faixa Etária" type="text" name="faixa_etaria" id="faixa_etaria" onChange={handleFaixaEtaria} />
+                </div>
                 <input type="submit" value="Cadastrar" />
             </form>
         </>
-    )
+    );
 }
 
-export default CadastroProduto
+export default CadastroProduto;
