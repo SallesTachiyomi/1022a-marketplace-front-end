@@ -48,6 +48,7 @@ button {
   transition: all 0.3s ease;
   text-transform: uppercase;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem; /* Adiciona espaçamento abaixo de cada botão */
 }
 
 button:hover {
@@ -75,6 +76,7 @@ button.excluir {
 button.excluir:hover {
   background-color: #f8f8f8;
 }
+
 
 @media (prefers-color-scheme: light) {
   :root {
